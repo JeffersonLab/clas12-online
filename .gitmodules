@@ -1,0 +1,12 @@
+[submodule "clon"]
+	path = clon
+	url = https://github.com/jeffersonlab/clas12-clon
+[submodule "coda"]
+	path = coda
+	url = https://github.com/jeffersonlab/clas12-coda
+[submodule "epics"]
+	path = epics
+	url = https://github.com/jeffersonlab/clas12-epics
+[submodule "parms"]
+	path = parms
+	url = https://github.com/jeffersonlab/clas12-parms
