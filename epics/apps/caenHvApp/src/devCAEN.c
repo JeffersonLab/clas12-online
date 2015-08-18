@@ -190,6 +190,7 @@ static long init_bo(struct boRecord  *pbo)
     ///printf("%s====================\n",tmp);
    }
   }
+    (void)retv;
   return 0;
 }
 
@@ -270,6 +271,7 @@ static long write_bo(struct boRecord *pbo)
       return(S_db_badField);
     }
   }
+    (void)retv;
   return 0;  
 }
 
