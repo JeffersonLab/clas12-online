@@ -15,28 +15,15 @@ source $CLAS/epics/.setup
 #
 # CODA setup
 #
-setenv CODA $CLAS/coda
-source $CODA/.setup
+source $CLAS/coda/.setup
 
 #
 # CLON setup
 #
-setenv CLON $CLAS/clon
-source $CLON/.setup
+source $CLAS/clon/.setup
 
 #
-# CERN and ROOT
+# ROOT
 #
-#setenv CERN /apps/cernlib
-#setenv CERN_LEVEL 2005
-#setenv CERN_ROOT /apps/cernlib/$CERN_LEVEL
-#setenv LAPACKDIR /apps/cernlib/LAPACK
-#setenv CVSCOSRC $CERN_ROOT/src
-setenv ROOTSYS /apps/root/5.34.21
-#
-#set -f path=("${CERN_ROOT}/bin" $path:q)
-set -f path=("${ROOTSYS}/bin" $path:q)
-#
-if ( ! $?LD_LIBRARY_PATH ) setenv LD_LIBRARY_PATH
-setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"${ROOTSYS}/lib"
+source /apps/root/5.34.21/bin/thisroot.csh
 
