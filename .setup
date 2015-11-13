@@ -24,6 +24,9 @@ source $CLAS/clon/.setup
 
 #
 # ROOT
-#
-source /apps/root/5.34.21/bin/thisroot.csh
+# - bin/thisroot.csh broken in older versions
+setenv ROOTSYS /apps/root/5.34.21
+set -f path=("$ROOTSYS/bin" $path:q)
+if ( ! $?LD_LIBRARY_PATH ) setenv LD_LIBRARY_PATH 
+setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"$ROOTSYS/lib"
 
