@@ -2,8 +2,14 @@
 #
 # .setup file for CLAS
 #
+set sourced=($_)
 
-setenv CLAS /usr/clas12/release/pro
+# Set $CLAS to the directory containing this .setup file.
+if ( ! $?CLAS ) then
+    set curdir=`/usr/bin/readlink -f $sourced[2]`
+    set curdir=`/usr/bin/dirname $curdir`
+    setenv CLAS $curdir
+endif
 
 umask 002
 
