@@ -12,6 +12,20 @@ if ( ! $?CLAS ) then
 endif
 
 umask 002
+if ( ! $?LD_LIBRARY_PATH ) setenv LD_LIBRARY_PATH 
+
+#
+# environment variables needed by all subsystems
+#
+setenv IPC_HOST clon00
+setenv IPC_HOME /usr/local/activemq
+setenv IPC_VER 3.9.5
+setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"$IPC_HOME/lib"
+
+#
+# JAVA third party jars
+#
+setenv IMPORT_JAR         /usr/clas12/third-party-libs/jar
 
 #
 # EPICS setup
@@ -33,6 +47,5 @@ source $CLAS/clon/.setup
 # - bin/thisroot.csh broken in older versions
 setenv ROOTSYS /apps/root/5.34.21
 set -f path=("$ROOTSYS/bin" $path:q)
-if ( ! $?LD_LIBRARY_PATH ) setenv LD_LIBRARY_PATH 
 setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"$ROOTSYS/lib"
 
